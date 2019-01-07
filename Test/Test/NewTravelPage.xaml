@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Test.NewTravelPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Save" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" Margin="20">
+            <Label x:Name="ntpFirstLabel" Text="Describe your experience :" HorizontalOptions="CenterAndExpand"/>
+            <Entry x:Name="experienceEntry" Placeholder="Maximum 250 characters"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

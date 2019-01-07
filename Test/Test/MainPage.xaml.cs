@@ -13,5 +13,20 @@ namespace Test
         {
             InitializeComponent();
         }
+        
+        private void LoginButton_Clicked(object sender, EventArgs e)
+        {
+            bool isEmailEmpty = string.IsNullOrEmpty(emailEntry.Text);
+            bool isPasswordEmpty = string.IsNullOrEmpty(passwordEntry.Text);
+
+            if (isEmailEmpty || isPasswordEmpty)
+            {
+                loginLabel.Text = "Login Failed";
+            }
+            else
+            {
+                Navigation.PushAsync(new HomePage());
+            }
+        }
     }
 }
