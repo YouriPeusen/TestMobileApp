@@ -14,7 +14,7 @@ namespace Test.Logic
         {
             List<Venue> venues = new List<Venue>();
 
-            var url = Venue.GenerateURL(latitude, longitude);
+            var url = VenueRoot.GenerateURL(latitude, longitude);
 
             using (HttpClient client = new HttpClient())
             {
@@ -22,9 +22,9 @@ namespace Test.Logic
                 var json = await response.Content.ReadAsStringAsync();
 
 
-                //var venueRoot = JsonConvert.DeserializeObject<Venue>(json);
+                var venueRoot = JsonConvert.DeserializeObject<VenueRoot>(json);
 
-                //venues = venueRoot.response.venues as List<Venue>;
+                venues = venueRoot.response.venues as List<Venue>;
             }
 
             return venues;

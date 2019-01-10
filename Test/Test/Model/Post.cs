@@ -12,5 +12,13 @@ namespace Test.Model
 
         [MaxLength(250)]
         public string Experience { get; set; }
+        public string VanueName { get; set; }
+        public string CategoryId { get; set; }
+        public string CategoryName { get; set; }
+        public string Address { get; set; }
+        public double Lattitude { get; set; }
+        public double Longitude { get; set; }
+        public int Distance { get; set; }
+
     }
 }

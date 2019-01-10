@@ -11,6 +11,36 @@
         <StackLayout VerticalOptions="Center" Margin="20">
             <Label x:Name="ntpFirstLabel" Text="Describe your experience :" HorizontalOptions="CenterAndExpand"/>
             <Entry x:Name="experienceEntry" Placeholder="Maximum 250 characters"/>
+            <ListView x:Name="venueListView"
+                      HorizontalOptions="FillAndExpand"
+                      Margin="20,0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Label Text="{Binding name}"
+                                       FontAttributes="Bold"
+                                       FontSize="Micro"/>
+                                <Label Grid.Row="1"
+                                       TextColor="DodgerBlue"
+                                       Text="{Binding location.address}"
+                                       FontSize="Micro"/>
+                                <Label Grid.Column="1"
+                                       Text="{Binding location.distance, StringFormat='{0} meters'}"
+                                       FontSize="Micro"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
